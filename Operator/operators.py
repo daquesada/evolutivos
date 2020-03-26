@@ -1,32 +1,43 @@
 import random
 
 def cxTwoPoint(ind1, ind2):
-    """Executes a two-point crossover on the input :term:`sequence`
-    individuals. The two individuals are modified in place and both keep
-    their original length.
-    :param ind1: The first individual participating in the crossover.
-    :param ind2: The second individual participating in the crossover.
-    :returns: A tuple of two individuals.
-    This function uses the :func:`~random.randint` function from the Python
-    base :mod:`random` module.
-    """
     size = min(len(ind1), len(ind2))
     cxpoint1 = random.randint(1, size)
     cxpoint2 = random.randint(1, size - 1)
     if cxpoint2 >= cxpoint1:
         cxpoint2 += 1
-    else:  # Swap the two cx points
+    else:
         cxpoint1, cxpoint2 = cxpoint2, cxpoint1
-
-    ind1[cxpoint1:cxpoint2], ind2[cxpoint1:cxpoint2] \
-        = ind2[cxpoint1:cxpoint2], ind1[cxpoint1:cxpoint2]
+    print(cxpoint1," ",cxpoint2)
+    ind1[cxpoint1:cxpoint2], ind2[cxpoint1:cxpoint2] = ind2[cxpoint1:cxpoint2], ind1[cxpoint1:cxpoint2]
 
     return ind1, ind2
 
-l1=[0,1,0,0,1]
-l2=[0,1,1,1,1]
+'''
+:k: probabilidad
+'''
 
-ind1, ind2 = cxTwoPoint(l1,l2)
-print(ind1)
-print("\n")
-print(ind2)
+def selTournament(individuals, tournsize, k):
+    chosen= []
+    for _ in range(k):
+
+        aspirants = selRandom(individuals, tournsize)
+        #chosen.append((aspirants))
+
+    return chosen
+
+def selRandom(individuals,k):
+    return [random.choice(individuals) for i in range(k)]
+
+
+''''
+l1=[0,1,0,0,1]
+l2=[1,0,0,0,0]
+aspirants = [l1.append(1),l2.append(2),[4,1,2,3,5],[6,7,8,9,0]]
+
+print(selTournament(aspirants, 2, 3))
+def selBest(individuals):
+    best = []
+    best = [evalGraph(individuals) for i in range (len(individuals))]
+    return []
+''''
