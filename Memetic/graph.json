@@ -1,0 +1,11 @@
+{
+  "Graph": [
+      {
+          "Vertices": "105",
+          "Edges": "IPET",
+          "CUPO": "40",
+          "TIPO": "SALON",
+          "NIVEL": "5"
+      }
+  ]
+}

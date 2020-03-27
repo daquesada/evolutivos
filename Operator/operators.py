@@ -30,9 +30,10 @@ def selRandom(individuals,k):
     return [random.choice(individuals) for i in range(k)]
 
 
-'''
-l1=[0,1,0,0,1]
-l2=[1,0,0,0,0]
+
+l1=[1,0,1,0,0]
+l2=[1,0,1,0,0]
+print(cxTwoPoint(l1,l2))
 aspirants = [l1.append(1),l2.append(2),[4,1,2,3,5],[6,7,8,9,0]]
 
 print(selTournament(aspirants, 2, 3))
@@ -40,4 +41,3 @@ def selBest(individuals):
     best = []
     best = [evalGraph(individuals) for i in range (len(individuals))]
     return []
-'''
